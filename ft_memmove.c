@@ -1,8 +1,8 @@
 #include "libft.h"
 
-void			*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t c;
+	size_t	c;
 
 	if (dest > src)
 	{
@@ -21,5 +21,5 @@ void			*ft_memmove(void *dest, const void *src, size_t n)
 			c++;
 		}
 	}
-	return(dest);
+	return (dest);
 }

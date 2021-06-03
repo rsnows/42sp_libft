@@ -1,14 +1,14 @@
-int ft_atoi(const char *nptr)
+int	ft_atoi(const char *nptr)
 {
-	int c;
-	int n;
-	int sig;
+	int	c;
+	int	n;
+	int	sig;
 
 	c = 0;
 	n = 0;
 	sig = 1;
 	while (nptr[c] == ' ' || nptr[c] == '\n' || nptr[c] == '\t' || nptr[c] == '\v'
-			|| nptr[c] == '\f' || nptr[c] == '\r')
+		|| nptr[c] == '\f' || nptr[c] == '\r')
 		c++;
 	if (nptr[c] == '-' || nptr[c] == '+')
 	{

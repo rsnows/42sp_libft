@@ -1,6 +1,6 @@
-int		ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
-	int c;
+	int	c;
 
 	c = 0;
 	while (str[c] != '\0')
