@@ -2,12 +2,13 @@
 
 char	*ft_itoa(int n)
 {
-	char *newst;
-	
-	if (!(newst = (char *)malloc(sizeof(char) * 2)))
+	char	*newst;
+
+	newst = (char *)malloc(sizeof(char) * 2);
+	if (!newst)
 		return (NULL);
 	if (n == -2147483648)
-		return ("-2147483648");
+		return (newst = strdup("-2147483648"));
 	else if (n < 0)
 	{
 		newst[0] = '-';
