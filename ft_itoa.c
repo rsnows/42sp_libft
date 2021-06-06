@@ -8,7 +8,7 @@ char	*ft_itoa(int n)
 	if (!newst)
 		return (NULL);
 	if (n == -2147483648)
-		return (newst = strdup("-2147483648"));
+		return (newst = ft_strdup("-2147483648"));
 	else if (n < 0)
 	{
 		newst[0] = '-';
