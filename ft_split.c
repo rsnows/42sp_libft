@@ -1,10 +1,10 @@
 #include "libft.h"
 
-static int cntwords(const char *s, char c)
+static int	cntwords(const char *s, char c)
 {
 	int	d;
 	int	words;
-	
+
 	d = 0;
 	words = 0;
 	while (s[d])
@@ -19,17 +19,15 @@ static int cntwords(const char *s, char c)
 	return (words);
 }
 
-
 char	**ft_split(char const *s, char c)
 {
 	int		d;
 	int		e;
 	int		f;
 	char	**split;
-	
+
 	d = 0;
 	f = 0;
-	
 	split = (char **)malloc(sizeof(char *) * (cntwords(s, c) + 1));
 	if (!split)
 		return (NULL);

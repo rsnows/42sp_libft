@@ -3,25 +3,21 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*newst;
-	char	*str1;
-	char	*str2;
 	int		c;
 	int		d;
 
-	str1 = (char *)s1;
-	str2 = (char *)s2;
-	c = ft_strlen (str1) + ft_strlen (str2);
-	newst = malloc(sizeof(char) * c + 1);
+	c = ft_strlen ((char *)s1) + ft_strlen ((char *)s2);
+	newst = malloc(sizeof(char) * (c + 1));
 	if (!newst)
 		return (NULL);
 	d = 0;
-	while (d < ft_strlen(str1))
+	while (d < ft_strlen((char *)s1))
 	{
 		newst[d] = s1[d];
 		d++;
 	}
 	c = 0;
-	while (c < ft_strlen(str2))
+	while (c < ft_strlen((char *)s2))
 	{
 		newst[d] = s2[c];
 		c++;
