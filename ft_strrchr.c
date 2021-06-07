@@ -11,7 +11,7 @@ char	*ft_strrchr(const char *s, int c)
 			return (((char *)&s[d - 1]));
 		d--;
 	}
-	if (c == '\0')
+	if (c == 0)
 		return (((char *)&s[d - 1]));
 	return (NULL);
 }
