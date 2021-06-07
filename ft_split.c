@@ -42,7 +42,7 @@ char	**ft_split(char const *s, char c)
 			d++;
 		if (d > e)
 		{
-			split[f] = ft_substr(s, e, (d - e));
+			split[f] = (char *)ft_substr(s, e, (d - e));
 			f++;
 		}
 	}
