@@ -46,6 +46,6 @@ char	**ft_split(char const *s, char c)
 			f++;
 		}
 	}
-	split[f] = '\0';
+	split[f] = NULL;
 	return (split);
 }
