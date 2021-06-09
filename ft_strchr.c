@@ -7,7 +7,7 @@ char	*ft_strchr(const char *s, int c)
 	d = 0;
 	while (s[d] != '\0')
 	{
-		if (s[d] == c)
+		if (s[d] == (c % 256))
 			return (((char *)&s[d]));
 		d++;
 	}
