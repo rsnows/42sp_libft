@@ -1,6 +1,8 @@
-int	ft_strlen(char *str)
+#include "libft.h"
+
+size_t	ft_strlen(const char *str)
 {
-	int	c;
+	size_t	c;
 
 	c = 0;
 	while (str[c] != '\0')

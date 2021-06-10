@@ -4,11 +4,11 @@ char	*ft_itoa(int n)
 {
 	char	*newst;
 
+	if (n == -2147483648)
+		return (newst = ft_strdup("-2147483648"));
 	newst = (char *)malloc(sizeof(char) * 2);
 	if (!newst)
 		return (NULL);
-	if (n == -2147483648)
-		return (newst = ft_strdup("-2147483648"));
 	else if (n < 0)
 	{
 		newst[0] = '-';
