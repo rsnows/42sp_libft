@@ -26,6 +26,8 @@ char	**ft_split(char const *s, char c)
 	int		f;
 	char	**split;
 
+	if (!s)
+		return (NULL);
 	d = 0;
 	f = 0;
 	split = (char **)malloc(sizeof(char *) * (cntwords(s, c) + 1));

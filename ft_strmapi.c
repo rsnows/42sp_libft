@@ -6,6 +6,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*newst;
 	unsigned int	c;
 
+	if (!s)
+		return (NULL);
 	oldst = (char *)s;
 	newst = (char *)malloc(sizeof(char) * (ft_strlen(oldst) + 1));
 	if (!newst)
