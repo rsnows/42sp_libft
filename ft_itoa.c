@@ -1,26 +1,44 @@
 #include "libft.h"
 
+int	absolute_n(int n)
+{
+    if (n < 0)
+		return (-n);
+    return (n);
+}
+
+int size_count(int n)
+{
+	int c;
+	
+	c = 0;
+	while (n > 9)
+	{
+		n = n / 10;
+		c++;
+	}
+	c++;
+	return (c);
+}
+
 char	*ft_itoa(int n)
 {
-	char	*newst;
+	int n_size;
+	char *new_st;
 
-	if (n == -2147483648)
-		return (newst = ft_strdup("-2147483648"));
-	newst = (char *)malloc(sizeof(char) * 2);
-	if (!newst)
+	n_size = size_count(n);
+	new_st = (char *)malloc(sizeof(char) * (n_size + 1));
+	new_st[n_size] = '\0';
+	if (!new_st)
 		return (NULL);
-	else if (n < 0)
+	if (n < 0)
+		new_st[0] = '-';
+	else if (n == 0)
+		new_st[0] = '0';		
+	while (n_size--)
 	{
-		newst[0] = '-';
-		newst[1] = '\0';
-		newst = ft_strjoin(newst, ft_itoa(-n));
+		new_st[n_size] = (absolute_n(n) % 10) + '\0';
+		n = n / 10;
 	}
-	else if (n >= 10)
-		newst = ft_strjoin(ft_itoa(n / 10), ft_itoa(n % 10));
-	else if (n < 10 && n >= 0)
-	{
-		newst[0] = n + '0';
-		newst[1] = '\0';
-	}
-	return (newst);
+	return (new_st);
 }
