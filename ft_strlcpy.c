@@ -2,7 +2,7 @@
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	size_t	c;
+	size_t			c;
 	unsigned int	srcsize;
 
 	if (!dest || !src)

@@ -1,19 +1,17 @@
 #include "libft.h"
-#include <stdio.h>
-
 
 int	neg_test(int n)
 {
     if (n < 0)
 		return (1);
 	else
-	    return (0);
+		return (0);
 }
 
-int size_count(unsigned int n)
+int	size_count(unsigned int n)
 {
-	int c;
-	
+	int	c;
+
 	c = 0;
 	if (n == 0)
 		return (1);
@@ -27,10 +25,10 @@ int size_count(unsigned int n)
 
 char	*ft_itoa(int n)
 {
-	unsigned int n_size;
-	unsigned int is_negative;
-	char *new_st;
-	unsigned int nbr;
+	unsigned int	n_size;
+	unsigned int	is_negative;
+	char			*new_st;
+	unsigned int	nbr;
 
 	is_negative = neg_test(n);
 	if (is_negative == 1)

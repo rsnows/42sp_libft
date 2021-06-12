@@ -2,7 +2,7 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*newst;
+	char		*newst;
 	size_t		c;
 	size_t		d;
 

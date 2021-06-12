@@ -25,9 +25,9 @@ static size_t	cntwords(const char *s, char c)
 
 static size_t	wrdsize(const char *s, char c)
 {
-	size_t d;
-	size_t e;
-	
+	size_t	d;
+	size_t	e;
+
 	d = 0;
 	e = 0;
 	while (s[d] == c)
@@ -42,7 +42,7 @@ char	**ft_split(char const *s, char c)
 	size_t		d;
 	size_t		e;
 	size_t		f;
-	char	**split;
+	char		**split;
 
 	if (!s)
 		return (NULL);
