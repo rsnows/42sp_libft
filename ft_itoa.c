@@ -1,44 +1,54 @@
 #include "libft.h"
+#include <stdio.h>
 
-int	absolute_n(int n)
+
+int	neg_test(int n)
 {
     if (n < 0)
-		return (-n);
-    return (n);
+		return (1);
+	else
+	    return (0);
 }
 
-int size_count(int n)
+int size_count(unsigned int n)
 {
 	int c;
 	
 	c = 0;
-	while (n > 9)
+	if (n == 0)
+		return (1);
+	while (n >= 1)
 	{
 		n = n / 10;
 		c++;
 	}
-	c++;
 	return (c);
 }
 
 char	*ft_itoa(int n)
 {
-	int n_size;
+	unsigned int n_size;
+	unsigned int is_negative;
 	char *new_st;
+	unsigned int nbr;
 
-	n_size = size_count(n);
-	new_st = (char *)malloc(sizeof(char) * (n_size + 1));
-	new_st[n_size] = '\0';
+	is_negative = neg_test(n);
+	if (is_negative == 1)
+		nbr = -n;
+	else
+		nbr = n;
+	n_size = size_count(nbr);
+	new_st = (char *)malloc(n_size + is_negative + 1);
 	if (!new_st)
 		return (NULL);
-	if (n < 0)
+	if (is_negative == 1)
 		new_st[0] = '-';
-	else if (n == 0)
-		new_st[0] = '0';		
-	while (n_size--)
+	new_st[n_size + is_negative] = '\0';
+	while (n_size > 0)
 	{
-		new_st[n_size] = (absolute_n(n) % 10) + '\0';
-		n = n / 10;
+		new_st[n_size - 1 + is_negative] = (nbr % 10) + '0';
+		nbr = nbr / 10;
+		n_size--;
 	}
 	return (new_st);
 }
