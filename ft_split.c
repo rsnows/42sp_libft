@@ -1,51 +1,69 @@
 #include "libft.h"
 
-static int	cntwords(const char *s, char c)
+static size_t	cntwords(const char *s, char c)
 {
-	int	d;
-	int	words;
+	size_t	d;
+	size_t	words;
+	size_t	flag;
 
 	d = 0;
 	words = 0;
+	flag = 0;
 	while (s[d])
 	{
-		while (s[d] == c)
-			d++;
-		if (s[d] != '\0')
+		if (s[d] == c)
+			flag = 0;
+		if (s[d] != c && flag == 0)
+		{
+			flag = 1;
 			words++;
-		while (s[d] && s[d] != c)
-			d++;
+		}
+		d++;
 	}
 	return (words);
 }
 
+static size_t	wrdsize(const char *s, char c)
+{
+	size_t d;
+	size_t e;
+	
+	d = 0;
+	e = 0;
+	while (s[d] == c)
+		d++;
+	while (s[d] != c && s[d++])
+		e++;
+	return (e);
+}
+
 char	**ft_split(char const *s, char c)
 {
-	int		d;
-	int		e;
-	int		f;
+	size_t		d;
+	size_t		e;
+	size_t		f;
 	char	**split;
 
 	if (!s)
 		return (NULL);
 	d = 0;
-	f = 0;
-	split = (char **)malloc(sizeof(char *) * (cntwords(s, c) + 1));
+	e = 0;
+	split = malloc(sizeof(char *) * (cntwords(s, c) + 1));
 	if (!split)
 		return (NULL);
-	while (s[d])
+	while (d < cntwords(s, c))
 	{
-		while (s[d] == c)
-			d++;
-		e = d;
-		while (s[d] && s[d] != c)
-			d++;
-		if (d > e)
-		{
-			split[f] = (char *)ft_substr(s, e, (d - e));
-			f++;
-		}
+		split[d] = malloc(sizeof(char) * (wrdsize(&s[e], c) + 1));
+		if (split[d] == 0)
+			return (NULL);
+		f = 0;
+		while (s[e] == c)
+			e++;
+		while (s[e] && s[e] != c)
+			split[d][f++] = s[e++];
+		split[d][f] = '\0';
+		d++;
 	}
-	split[f] = NULL;
+	split[d] = NULL;
 	return (split);
 }

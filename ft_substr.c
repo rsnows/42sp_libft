@@ -4,7 +4,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*sub;
 	size_t	c;
-	size_t max;
+	size_t	max;
 
 	if (!s)
 		return (NULL);
