@@ -54,8 +54,7 @@ char	**ft_split(char const *s, char c)
 	while (d < cntwords(s, c))
 	{
 		split[d] = malloc(sizeof(char) * (wrdsize(&s[e], c) + 1));
-		if (split[d] == 0)
-			return (NULL);
+
 		f = 0;
 		while (s[e] == c)
 			e++;
