@@ -1,4 +1,5 @@
 #include "libft.h"
+#include <stdio.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -23,4 +24,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	sub[c] = '\0';
 	return (sub);
+}
+
+int main(void)
+{
+	char *a;
+	a = ft_substr("n7M", 1, 8);
+	printf("%s", a);
 }
