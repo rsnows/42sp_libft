@@ -9,6 +9,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!s)
 		return (NULL);
 	max = (size_t)ft_strlen((char *)s) - start;
+	if (max <= 0)
+		return (NULL);
 	if (len < max)
 		max = len;
 	sub = malloc(sizeof(char) * max + 1);
