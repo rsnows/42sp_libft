@@ -2,11 +2,15 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (!lst || !new)
-		return ;
-	while ((*lst)->next != NULL)
+	if (lst)
 	{
-		(*lst) = (*lst)->next;
+		if (*lst == NULL)
+			*lst = new;
+		else
+		{
+			while ((*lst)->next != NULL)
+				(*lst) = (*lst)->next;
+			(*lst)->next = new;
+		}
 	}
-	(*lst)->next = new;
 }
