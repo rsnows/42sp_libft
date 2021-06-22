@@ -3,11 +3,11 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-typedef	struct	s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
-} t_list;
+}	t_list;
 
 int				ft_atoi(const char *nptr);
 void			ft_bzero(void *s, size_t n);
